@@ -67,13 +67,16 @@ function braveSearch(query, count = 10, freshness = '1d') {
 }
 
 function isWithin24Hours(age) {
-    if (!age) return false;
+    if (!age) return true; // Trust API freshness filter if no age provided
     const ageLower = age.toLowerCase();
-    // Accept only very recent content
+    // Reject clearly old content
+    if (ageLower.includes('week') || ageLower.includes('month') || ageLower.includes('year')) return false;
+    if (ageLower.includes('days') && !ageLower.includes('1 day') && !ageLower.includes('one day')) return false;
+    // Accept recent content
     if (ageLower.includes('minute') || ageLower.includes('hour') || ageLower.includes('today')) return true;
     if (ageLower.includes('day') && !ageLower.includes('days')) return true;
     if (ageLower.includes('1 day') || ageLower.includes('one day')) return true;
-    return false;
+    return true; // Default: trust API freshness
 }
 
 function filterRecentResults(results, maxAgeHours = 24) {
