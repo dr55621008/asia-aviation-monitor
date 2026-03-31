@@ -1,6 +1,6 @@
 # 🛫 Asia Aviation Daily Report
 
-**Date:** 31/3/2026, 8:18:21 am (HKT)  
+**Date:** 1/4/2026, 6:54:09 am (HKT)  
 **Coverage:** Asia-Pacific Region  
 **Search Period:** Past 24 hours
 
@@ -53,7 +53,7 @@ No significant news found in the past 24 hours.
 
 ---
 
-**Report Generated:** 31/3/2026, 8:18:21 am  
+**Report Generated:** 1/4/2026, 6:54:09 am  
 **Next Report:** Tomorrow 08:00 HKT
 
 ---
