@@ -66,17 +66,35 @@ function braveSearch(query, count = 10, freshness = '1d') {
     });
 }
 
-function isWithin24Hours(age) {
-    if (!age) return true; // Trust API freshness filter if no age provided
+function parseAgeToHours(age) {
+    if (!age) return 999; // Unknown age = reject
     const ageLower = age.toLowerCase();
-    // Reject clearly old content
-    if (ageLower.includes('week') || ageLower.includes('month') || ageLower.includes('year')) return false;
-    if (ageLower.includes('days') && !ageLower.includes('1 day') && !ageLower.includes('one day')) return false;
-    // Accept recent content
-    if (ageLower.includes('minute') || ageLower.includes('hour') || ageLower.includes('today')) return true;
-    if (ageLower.includes('day') && !ageLower.includes('days')) return true;
-    if (ageLower.includes('1 day') || ageLower.includes('one day')) return true;
-    return true; // Default: trust API freshness
+    
+    // Parse time units
+    const minutesMatch = ageLower.match(/(\d+)\s*min/);
+    if (minutesMatch) return parseInt(minutesMatch[1]) / 60;
+    
+    const hoursMatch = ageLower.match(/(\d+)\s*hr/);
+    if (hoursMatch) return parseInt(hoursMatch[1]);
+    
+    const daysMatch = ageLower.match(/(\d+)\s*day/);
+    if (daysMatch) return parseInt(daysMatch[1]) * 24;
+    
+    // Text-based ages
+    if (ageLower.includes('today')) return 12;
+    if (ageLower.includes('yesterday')) return 24;
+    
+    // Reject old content
+    if (ageLower.includes('week')) return 999;
+    if (ageLower.includes('month')) return 999;
+    if (ageLower.includes('year')) return 999;
+    
+    return 999; // Unknown = reject
+}
+
+function isWithin24Hours(age) {
+    const hours = parseAgeToHours(age);
+    return hours <= 24;
 }
 
 function filterRecentResults(results, maxAgeHours = 24) {
