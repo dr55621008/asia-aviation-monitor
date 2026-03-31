@@ -1,6 +1,6 @@
 # 🛫 Asia Aviation Daily Report
 
-**Date:** 2026-03-31 08:00 (GMT+8)  
+**Date:** 2026-03-31 08:06 (GMT+8)  
 **Coverage:** Asia-Pacific Region  
 **Search Period:** Past 24 hours
 
@@ -30,6 +30,6 @@
 
 ---
 
-**Report Generated:** 2026-03-31 08:00  
+**Report Generated:** 2026-03-31 08:06  
 **Next Report:** Tomorrow 08:00 HKT
 
