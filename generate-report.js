@@ -66,6 +66,24 @@ function braveSearch(query, count = 10, freshness = '1d') {
     });
 }
 
+function isWithin24Hours(age) {
+    if (!age) return false;
+    const ageLower = age.toLowerCase();
+    // Accept only very recent content
+    if (ageLower.includes('minute') || ageLower.includes('hour') || ageLower.includes('today')) return true;
+    if (ageLower.includes('day') && !ageLower.includes('days')) return true;
+    if (ageLower.includes('1 day') || ageLower.includes('one day')) return true;
+    return false;
+}
+
+function filterRecentResults(results, maxAgeHours = 24) {
+    if (!results || results.length === 0) return [];
+    return results.filter(item => {
+        const age = item.age || '';
+        return isWithin24Hours(age);
+    });
+}
+
 function formatSearchResults(results, maxItems = 5) {
     if (!results || results.length === 0) {
         return 'No significant news found in the past 24 hours.\n';
@@ -106,44 +124,48 @@ async function generateReport() {
     }
     
     // Search for aviation incidents (include flight tracking sources)
-    log('Searching for aviation incidents...');
+    log('Searching for aviation incidents (24h only)...');
     const incidentSearch = await braveSearch(
         'Asia aviation incident accident emergency landing delay cancellation site:flightradar24.com OR site:flightglobal.com OR site:simpleflying.com OR site:aviation24.be OR site:aeroroutes.com',
         10,
         '1d'
     );
-    const incidentResults = incidentSearch.web?.results || [];
-    log(`Found ${incidentResults.length} incident-related results`);
+    let incidentResults = incidentSearch.web?.results || [];
+    incidentResults = filterRecentResults(incidentResults);
+    log(`Found ${incidentResults.length} recent incident results (24h)`);
     
     // Search for airline news (major Asia carriers + industry sites)
-    log('Searching for airline news...');
+    log('Searching for airline news (24h only)...');
     const airlineNews = await braveSearch(
         'Cathay Pacific Singapore Airlines Japan Airlines ANA China Eastern China Southern AirAsia Malaysia Airlines Philippines Airlines site:flightglobal.com OR site:simpleflying.com OR site:airlineratings.com OR site:aeroroutes.com OR site:ch-aviation.com',
         10,
         '1d'
     );
-    const airlineResults = airlineNews.web?.results || [];
-    log(`Found ${airlineResults.length} airline news results`);
+    let airlineResults = airlineNews.web?.results || [];
+    airlineResults = filterRecentResults(airlineResults);
+    log(`Found ${airlineResults.length} recent airline news results (24h)`);
     
     // Search for airport news
-    log('Searching for airport news...');
+    log('Searching for airport news (24h only)...');
     const airportNews = await braveSearch(
         'Asia airport expansion new route hub capacity site:airport-technology.com OR site:flightglobal.com OR site:aeroroutes.com',
         5,
         '1d'
     );
-    const airportResults = airportNews.web?.results || [];
-    log(`Found ${airportResults.length} airport news results`);
+    let airportResults = airportNews.web?.results || [];
+    airportResults = filterRecentResults(airportResults);
+    log(`Found ${airportResults.length} recent airport news results (24h)`);
     
     // Search for flight tracking data (delays, disruptions)
-    log('Searching for flight tracking updates...');
+    log('Searching for flight tracking updates (24h only)...');
     const flightTracking = await braveSearch(
         'Asia flight delays disruptions cancellations today site:flightradar24.com OR site:flightstats.com OR site:flightaware.com',
         5,
         '1d'
     );
-    const trackingResults = flightTracking.web?.results || [];
-    log(`Found ${trackingResults.length} flight tracking results`);
+    let trackingResults = flightTracking.web?.results || [];
+    trackingResults = filterRecentResults(trackingResults);
+    log(`Found ${trackingResults.length} recent flight tracking results (24h)`);
     
     const regionalStatus = checkRegionalStatus();
     
