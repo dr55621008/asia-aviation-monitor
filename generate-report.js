@@ -105,20 +105,20 @@ async function generateReport() {
         fs.mkdirSync(REPORT_DIR, { recursive: true });
     }
     
-    // Search for aviation incidents
+    // Search for aviation incidents (include flight tracking sources)
     log('Searching for aviation incidents...');
     const incidentSearch = await braveSearch(
-        'Asia aviation incident accident emergency landing delay cancellation',
+        'Asia aviation incident accident emergency landing delay cancellation site:flightradar24.com OR site:flightglobal.com OR site:simpleflying.com OR site:aviation24.be OR site:aeroroutes.com',
         10,
         '1d'
     );
     const incidentResults = incidentSearch.web?.results || [];
     log(`Found ${incidentResults.length} incident-related results`);
     
-    // Search for airline news
+    // Search for airline news (major Asia carriers + industry sites)
     log('Searching for airline news...');
     const airlineNews = await braveSearch(
-        'Cathay Pacific Singapore Airlines Japan Airlines ANA Asia airline news',
+        'Cathay Pacific Singapore Airlines Japan Airlines ANA China Eastern China Southern AirAsia Malaysia Airlines Philippines Airlines site:flightglobal.com OR site:simpleflying.com OR site:airlineratings.com OR site:aeroroutes.com OR site:ch-aviation.com',
         10,
         '1d'
     );
@@ -128,12 +128,22 @@ async function generateReport() {
     // Search for airport news
     log('Searching for airport news...');
     const airportNews = await braveSearch(
-        'Asia airport expansion new route hub capacity',
+        'Asia airport expansion new route hub capacity site:airport-technology.com OR site:flightglobal.com OR site:aeroroutes.com',
         5,
         '1d'
     );
     const airportResults = airportNews.web?.results || [];
     log(`Found ${airportResults.length} airport news results`);
+    
+    // Search for flight tracking data (delays, disruptions)
+    log('Searching for flight tracking updates...');
+    const flightTracking = await braveSearch(
+        'Asia flight delays disruptions cancellations today site:flightradar24.com OR site:flightstats.com OR site:flightaware.com',
+        5,
+        '1d'
+    );
+    const trackingResults = flightTracking.web?.results || [];
+    log(`Found ${trackingResults.length} flight tracking results`);
     
     const regionalStatus = checkRegionalStatus();
     
@@ -143,6 +153,8 @@ async function generateReport() {
 **Date:** ${REPORT_TIME} (HKT)  
 **Coverage:** Asia-Pacific Region  
 **Search Period:** Past 24 hours
+
+**Sources:** FlightRadar24, FlightGlobal, Simple Flying, AirlineRatings, AeroRoutes, Aviation24, ch-aviation, Airport Technology
 
 ---
 
@@ -161,6 +173,12 @@ ${formatSearchResults(airlineResults, 5)}
 ## 🏢 Airport & Infrastructure
 
 ${formatSearchResults(airportResults, 3)}
+
+---
+
+## ✈️ Flight Tracking & Disruptions
+
+${formatSearchResults(trackingResults, 5)}
 
 ---
 
@@ -202,6 +220,8 @@ ${regionalStatus.map(r => `| ${r.region} | ${r.status} |`).join('\n')}
     // Generate WhatsApp summary
     const incidentCount = incidentResults.length;
     const newsCount = airlineResults.length;
+    const airportCount = airportResults.length;
+    const trackingCount = trackingResults.length;
     
     let whatsappMsg = `🛫 *Asia Aviation Daily Report* (${REPORT_DATE})
 
@@ -211,6 +231,10 @@ ${regionalStatus.map(r => `| ${r.region} | ${r.status} |`).join('\n')}
 📊 Summary:
 • Incidents/Issues: ${incidentCount > 0 ? incidentCount + ' reported' : 'None'}
 • Airline News: ${newsCount > 0 ? newsCount + ' stories' : 'None'}
+• Airport Updates: ${airportCount > 0 ? airportCount + ' updates' : 'None'}
+• Flight Disruptions: ${trackingCount > 0 ? trackingCount + ' alerts' : 'None'}
+
+📰 Sources: FlightRadar24, FlightGlobal, Simple Flying, AirlineRatings, AeroRoutes
 
 `;
     
@@ -223,6 +247,7 @@ ${regionalStatus.map(r => `| ${r.region} | ${r.status} |`).join('\n')}
     }
     
     whatsappMsg += `📁 Full report: \`${REPORT_DIR}/\`
+🔗 GitHub: github.com/dr55621008/asia-aviation-monitor
 
 #AviationMonitor #Asia`;
     
