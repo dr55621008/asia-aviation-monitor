@@ -184,17 +184,19 @@ ${regionalStatus.map(r => `| ${r.region} | ${r.status} |`).join('\n')}
     fs.writeFileSync(reportFile, reportContent);
     log(`✓ Report generated: ${reportFile}`);
     
-    // Git commit
+    // Git commit and push
     try {
         process.chdir(WORKSPACE);
         execSync('git init', { stdio: 'pipe' });
         execSync('git config user.email "dr55621008@users.noreply.github.com"');
         execSync('git config user.name "dr55621008"');
         execSync(`git add "${reportFile}"`, { stdio: 'pipe' });
+        execSync(`git add reports/`, { stdio: 'pipe' });
         execSync(`git commit -m "Daily report: ${REPORT_DATE}"`, { stdio: 'pipe' });
-        log('✓ Committed to git');
+        execSync('git push origin master', { stdio: 'pipe', timeout: 30000 });
+        log('✓ Committed and pushed to GitHub');
     } catch (error) {
-        log(`Git commit skipped: ${error.message}`);
+        log(`Git push skipped: ${error.message}`);
     }
     
     // Generate WhatsApp summary
