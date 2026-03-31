@@ -1,6 +1,6 @@
 # 🛫 Asia Aviation Daily Report
 
-**Date:** 31/3/2026, 8:08:56 am (HKT)  
+**Date:** 31/3/2026, 8:09:48 am (HKT)  
 **Coverage:** Asia-Pacific Region  
 **Search Period:** Past 24 hours
 
@@ -8,7 +8,33 @@
 
 ## 🚨 Incident Summary
 
-No significant news found in the past 24 hours.
+1. **Air safety incidents for AirAsia - AeroInside**
+   If you want to know how many AirAsia planes have crashed or if there has been a AirAsia plane crash at all, you&#x27;ll find out below. Have a look at the recent safety record of AirAsia. Under EU regulations, <strong>you might be eligible for compensation if your flight was delayed or cancelled</strong>.
+   _Source: https://www.aeroinside.com/airline/airasia_ 
+
+2. **Indonesia AirAsia Flight 8501 - Wikipedia**
+   Without the FAC&#x27;s computerized flight augmentation, pilots would have to &quot;rely on manual flying skills that are often stretched during a sudden airborne emergency&quot;. When the crew was required to fly the Airbus A320 manually, there was an unexplained nine-second delay between the start of the roll and either pilot attempting to take control.
+   _Source: https://en.wikipedia.org/wiki/Indonesia_AirAsia_Flight_8501_ • February 20, 2026
+
+3. **Asiana Airlines Flight 214 San Francisco Crash | Kreindler**
+   Kreindler will investigate whether any potential delay in the emergency response harmed any of the survivors. Additionally, the NTSB and local authorities will see whether any additional survivors were injured by emergency vehicles responding to the accident site. On July 6, 2013, Asiana Airlines Flight 214, carrying 291 passengers and 16 crew members, crash-landed at its destination, San Francisco International Airport.
+   _Source: https://www.kreindler.com/cases/asiana-airlines-flight-214-san-francisco_ • February 14, 2026
+
+4. **airasia flight emergency landing: Latest News & Videos, Photos about airasia flight emergency landing | The Economic Times - Page 1**
+   The captain cited flight safety ... IST · <strong>Air India flight AI2493 from Mumbai to Ahmedabad was cancelled on Monday after an initial delay due to operational issues led to the crew reaching their Flight Duty Time Limit</strong>...
+   _Source: https://economictimes.indiatimes.com/topic/airasia-flight-emergency-landing_ 
+
+5. **Asiana Airlines Flight 733 - Wikipedia**
+   After the crash, Asiana Airlines announced that the plane had been delayed by three landing attempts and that it appeared to have crashed. The runways did not have an ILS installed. Mokpo Airport was equipped with only a VOR/DME, resulting in the pilots performing multiple landing attempts, contributing to the accident.
+   _Source: https://en.wikipedia.org/wiki/Asiana_Airlines_Flight_733_ • November 17, 2025
+
+6. **Asiana Airlines Flight 214 - Wikipedia**
+   South Korean transport ministry officials ordered Korean Air and Asiana to check engines and landing equipment on all 48 of their model 777 aircraft and announced that the government would conduct special inspections on the nation&#x27;s eight carriers through August 25, 2013. &quot;The measures could include [changing] rules on training flights if needed&quot;, Deputy Minister for Civil Aviation Choi Jeong-ho told reporters.
+   _Source: https://en.wikipedia.org/wiki/Asiana_Airlines_Flight_214_ • 1 week ago
+
+7. **r/CatastrophicFailure on Reddit: (2013) The crash of Asiana Airlines flight 214 - A Boeing 777 strikes a seawall short of the runway in San Francisco, killing 3 of the 307 on board, after losing too much airspeed on final approach. Analysis inside.**
+   They prove their competence in a simulator every 6 months, but that doesn’t always equate to performance in an actual emergency. I’m not beating up on Asian pilots, just describing the reality of the true flight experience many airline pilots have. ... It surprises me that they pitch the nose up to gain altitude but don&#x27;t notice the engines aren&#x27;t increasing speed automatically. Is that not something you hear or feel (the lack of)? ... Not necessarily, there’s about a 10 second delay between moving the throttles from idle to full power and the engines actually reaching full power, so that little delay can make a power increase invisible.
+   _Source: https://www.reddit.com/r/CatastrophicFailure/comments/142sb54/2013_the_crash_of_asiana_airlines_flight_214_a/_ • June 6, 2023
 
 
 ---
@@ -22,7 +48,17 @@ No significant news found in the past 24 hours.
 
 ## 🏢 Airport & Infrastructure
 
-No significant news found in the past 24 hours.
+1. **Event Asia Aviation 2026: Xi'an Hosts Routes Conference with 280+ Exhibitors - Nomad Lawyer**
+   Xi&#x27;an International Airport (XIY) serves as the central venue for this landmark event asia aviation conference. China&#x27;s decision to host Routes 2026 underscores the nation&#x27;s growing prominence in global aviation connectivity. The city&#x27;s strategic location positions it as a crucial hub linking domestic and international air routes. Industry leaders use this platform to announce new route launches, codeshare agreements, and capacity expansions targeting emerging Asian markets.
+   _Source: https://nomadlawyer.org/event-asia-aviation-routes-2026-xian-china_ • 5 days ago
+
+2. **100 Million Club: The Rise of Mega Airports | Part 2 | Aviation Market Analysis | OAG**
+   Here are some of the projects currently ... on the new mega-terminal began in May 2025 and will add passenger capacity of <strong>approximately 50 million</strong> (taking the airport from nearly 90 million to approximately 140 million by ...
+   _Source: https://www.oag.com/blog/100-million-club-the-rise-of-mega-airports-part-2_ • September 24, 2025
+
+3. **Strategically connecting Asia and the Americas: Delta at Incheon International Airport | Delta News Hub**
+   1 hub airport last year, with ... capacity from 500,000 to 600,000 and increasing the airport&#x27;s overall capacity to <strong>160 million passengers</strong>....
+   _Source: https://news.delta.com/strategically-connecting-asia-and-americas-delta-incheon-international-airport_ • January 28, 2025
 
 
 ---
@@ -44,7 +80,7 @@ No significant news found in the past 24 hours.
 
 ---
 
-**Report Generated:** 31/3/2026, 8:08:56 am  
+**Report Generated:** 31/3/2026, 8:09:48 am  
 **Next Report:** Tomorrow 08:00 HKT
 
 ---
