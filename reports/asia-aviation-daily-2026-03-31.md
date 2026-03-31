@@ -1,6 +1,6 @@
 # 🛫 Asia Aviation Daily Report
 
-**Date:** 31/3/2026, 8:09:48 am (HKT)  
+**Date:** 31/3/2026, 8:10:04 am (HKT)  
 **Coverage:** Asia-Pacific Region  
 **Search Period:** Past 24 hours
 
@@ -48,17 +48,7 @@ No significant news found in the past 24 hours.
 
 ## 🏢 Airport & Infrastructure
 
-1. **Event Asia Aviation 2026: Xi'an Hosts Routes Conference with 280+ Exhibitors - Nomad Lawyer**
-   Xi&#x27;an International Airport (XIY) serves as the central venue for this landmark event asia aviation conference. China&#x27;s decision to host Routes 2026 underscores the nation&#x27;s growing prominence in global aviation connectivity. The city&#x27;s strategic location positions it as a crucial hub linking domestic and international air routes. Industry leaders use this platform to announce new route launches, codeshare agreements, and capacity expansions targeting emerging Asian markets.
-   _Source: https://nomadlawyer.org/event-asia-aviation-routes-2026-xian-china_ • 5 days ago
-
-2. **100 Million Club: The Rise of Mega Airports | Part 2 | Aviation Market Analysis | OAG**
-   Here are some of the projects currently ... on the new mega-terminal began in May 2025 and will add passenger capacity of <strong>approximately 50 million</strong> (taking the airport from nearly 90 million to approximately 140 million by ...
-   _Source: https://www.oag.com/blog/100-million-club-the-rise-of-mega-airports-part-2_ • September 24, 2025
-
-3. **Strategically connecting Asia and the Americas: Delta at Incheon International Airport | Delta News Hub**
-   1 hub airport last year, with ... capacity from 500,000 to 600,000 and increasing the airport&#x27;s overall capacity to <strong>160 million passengers</strong>....
-   _Source: https://news.delta.com/strategically-connecting-asia-and-americas-delta-incheon-international-airport_ • January 28, 2025
+No significant news found in the past 24 hours.
 
 
 ---
@@ -80,7 +70,7 @@ No significant news found in the past 24 hours.
 
 ---
 
-**Report Generated:** 31/3/2026, 8:09:48 am  
+**Report Generated:** 31/3/2026, 8:10:04 am  
 **Next Report:** Tomorrow 08:00 HKT
 
 ---
